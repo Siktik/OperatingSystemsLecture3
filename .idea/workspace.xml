@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b82843b-70e8-47c6-9b52-d10fa255e0a2" name="Changes" comment="hello world commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/TransactionInformation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ZFSMapper.java" afterDir="false" />
+    <list default="true" id="5b82843b-70e8-47c6-9b52-d10fa255e0a2" name="Changes" comment="wrote basic zfs commands in a class and tested them. started datastructure for snapshots and writing, need to conceptualize some things though prior to coding">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/BrainstormingTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Validator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TransactionInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TransactionInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ZFSMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ZFSMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,14 +46,16 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/maxsp/javafx-sdk-23.0.2/bin&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -91,7 +96,11 @@
       <option name="presentableId" value="Default" />
       <updated>1738781621574</updated>
       <workItem from="1738781622704" duration="1710000" />
-      <workItem from="1739290662585" duration="12222000" />
+      <workItem from="1739290662585" duration="12292000" />
+      <workItem from="1739346804077" duration="28060000" />
+      <workItem from="1739394664925" duration="1590000" />
+      <workItem from="1739433026621" duration="272000" />
+      <workItem from="1739433381208" duration="9166000" />
     </task>
     <task id="LOCAL-00001" summary="hello world commit">
       <option name="closed" value="true" />
@@ -101,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739290914245</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="wrote basic zfs commands in a class and tested them. started datastructure for snapshots and writing, need to conceptualize some things though prior to coding">
+      <option name="closed" value="true" />
+      <created>1739307048111</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739307048111</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +126,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hello world commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="hello world commit" />
+    <MESSAGE value="wrote basic zfs commands in a class and tested them. started datastructure for snapshots and writing, need to conceptualize some things though prior to coding" />
+    <option name="LAST_COMMIT_MESSAGE" value="wrote basic zfs commands in a class and tested them. started datastructure for snapshots and writing, need to conceptualize some things though prior to coding" />
   </component>
 </project>
