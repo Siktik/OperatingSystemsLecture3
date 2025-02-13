@@ -18,21 +18,20 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Validator {
 
-    private static String pathFileAccess = "/mypool/myfs/";
     private static int numberOfThreads = 3;
     private static int numberOfFiles = 6;
     private static double meanWritingTime = 2000; // milliseconds
     private static double stVarWritingTime = 1500; // milliseconds
 
-    private static int seed=42;
-    private static Random random = new Random(seed);
+    private static final int seed=42;
+    private static final Random random = new Random(seed);
 
 
-    private static int numberOfIterations = 50;
-    private static List<Integer> threadParameters= new LinkedList<>(List.of(3,6,3,6,2,3,2,3));
-    private static List<Integer> numberOfFilesParameters= new LinkedList<>(List.of(9,9,12,12,5,5,7,7));
-    private static List<Integer> meanWritingTimeParameters= new LinkedList<>(List.of(500,500,2000,2000,500,500,2000,2000));
-    private static List<Integer> stVarWritingTimeParameters= new LinkedList<>(List.of(200,200,1500,1500,200,200,1500,1500));
+    private static final int numberOfIterations = 50;
+    private static final List<Integer> threadParameters= new LinkedList<>(List.of(3,6,3,6,2,3,2,3));
+    private static final List<Integer> numberOfFilesParameters= new LinkedList<>(List.of(9,9,12,12,5,5,7,7));
+    private static final List<Integer> meanWritingTimeParameters= new LinkedList<>(List.of(500,500,2000,2000,500,500,2000,2000));
+    private static final List<Integer> stVarWritingTimeParameters= new LinkedList<>(List.of(200,200,1500,1500,200,200,1500,1500));
 
     private static List<Integer> transactionsAttempted= new LinkedList<>();
     private static List<Integer> succesfullWrites= new LinkedList<>();
@@ -127,7 +126,7 @@ public class Validator {
         for (int i = 0; i < numberOfIterations; i++) {
             // Randomly select a file to write to
             String fileName = "file" + random.nextInt(numberOfFiles) + ".txt";
-            String content = generateRandomString(10000);
+            String content = threadName+" writes on iteration "+ i;
 
             // Notify ZFSMapper about the writing start
             TransactionInformation transactionInformation= ZFSMapper.notifyWrite(threadName, fileName);
@@ -157,9 +156,6 @@ public class Validator {
                     break;
                 }
             }
-
-
-
         }
     }
 
@@ -231,25 +227,6 @@ public class Validator {
         }
         writer.append("\n");
     }
-
-    private static final String CHAR_POOL = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    private static final SecureRandom RANDOM = new SecureRandom();
-
-    public static String generateRandomString(int length) {
-        StringBuilder sb = new StringBuilder(length);
-        for (int i = 0; i < length; i++) {
-            int index = RANDOM.nextInt(CHAR_POOL.length());
-            sb.append(CHAR_POOL.charAt(index));
-        }
-        return sb.toString();
-    }
-
-
-
-
-
-
-
 
 
 }

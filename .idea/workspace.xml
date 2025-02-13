@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b82843b-70e8-47c6-9b52-d10fa255e0a2" name="Changes" comment="wrote basic zfs commands in a class and tested them. started datastructure for snapshots and writing, need to conceptualize some things though prior to coding">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/BrainstormingTool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Validator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TransactionInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TransactionInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ZFSMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ZFSMapper.java" afterDir="false" />
+    <list default="true" id="5b82843b-70e8-47c6-9b52-d10fa255e0a2" name="Changes" comment="committing the results of validator run">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Validator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +94,7 @@
       <workItem from="1739346804077" duration="28060000" />
       <workItem from="1739394664925" duration="1590000" />
       <workItem from="1739433026621" duration="272000" />
-      <workItem from="1739433381208" duration="9166000" />
+      <workItem from="1739433381208" duration="9344000" />
     </task>
     <task id="LOCAL-00001" summary="hello world commit">
       <option name="closed" value="true" />
@@ -118,7 +112,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739307048111</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="wrote comments for all code&#10;finished work on validator and did the experiment">
+      <option name="closed" value="true" />
+      <created>1739455989559</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739455989560</updated>
+    </task>
+    <task id="LOCAL-00004" summary="committing the results of validator run">
+      <option name="closed" value="true" />
+      <created>1739456012376</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1739456012376</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +137,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hello world commit" />
     <MESSAGE value="wrote basic zfs commands in a class and tested them. started datastructure for snapshots and writing, need to conceptualize some things though prior to coding" />
-    <option name="LAST_COMMIT_MESSAGE" value="wrote basic zfs commands in a class and tested them. started datastructure for snapshots and writing, need to conceptualize some things though prior to coding" />
+    <MESSAGE value="wrote comments for all code&#10;finished work on validator and did the experiment" />
+    <MESSAGE value="committing the results of validator run" />
+    <option name="LAST_COMMIT_MESSAGE" value="committing the results of validator run" />
   </component>
 </project>
