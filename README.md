@@ -1,5 +1,6 @@
 ## optimistic concurrency modification of files using ZFS Snapshots
 -  only runs on linux with zfs installed, a pool "mypool" and a zfs on it -> "mypool/myfs", if named different, the paths need to be adjusted in ZFSMapper
+-  pool and fs should be located such that 'sudo zfs snapshot mypool/myfs@snapshot' works as well as 'sudo echo 'help me' > /mypool/myfs/test.txt'
 -  Java 21 used
 -  strictly uses command line
 -  files are in package org.example, therefore navigate to /java and then compile with **javac org/example/*.java**, run with f.e. **java org/example/Validator.java**
