@@ -3,8 +3,8 @@ package org.example;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.security.SecureRandom;
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -23,15 +23,14 @@ public class Validator {
     private static double meanWritingTime = 2000; // milliseconds
     private static double stVarWritingTime = 1500; // milliseconds
 
-    private static final int seed=42;
-    private static final Random random = new Random(seed);
 
 
-    private static final int numberOfIterations = 50;
-    private static final List<Integer> threadParameters= new LinkedList<>(List.of(3,6,3,6,2,3,2,3));
-    private static final List<Integer> numberOfFilesParameters= new LinkedList<>(List.of(9,9,12,12,5,5,7,7));
-    private static final List<Integer> meanWritingTimeParameters= new LinkedList<>(List.of(500,500,2000,2000,500,500,2000,2000));
-    private static final List<Integer> stVarWritingTimeParameters= new LinkedList<>(List.of(200,200,1500,1500,200,200,1500,1500));
+
+    private static final int numberOfIterations = 150;
+    private static final List<Integer> threadParameters= new LinkedList<>(List.of(3,3,3,3,10,10,30,30,50,50));
+    private static final List<Integer> numberOfFilesParameters= new LinkedList<>(List.of(9,9,9,9,100,500,300,1500,500,2500));
+    private static final List<Integer> meanWritingTimeParameters= new LinkedList<>(List.of(2000,2000,600,200,600,600,600,600,600,600));
+    private static final List<Integer> stVarWritingTimeParameters= new LinkedList<>(List.of(200,1800,400,100,400,400,400,400,400,400));
 
     private static List<Integer> transactionsAttempted= new LinkedList<>();
     private static List<Integer> succesfullWrites= new LinkedList<>();
@@ -75,8 +74,9 @@ public class Validator {
 
 
         // Delete possible remaining Snapshots from testing and debug, create files for the simulation
-        ZFSMapper.deleteAllSnapshot();
+
         for (int i = 0; i < threadParameters.size(); i++) {
+            ZFSMapper.deleteAllSnapshot();
             initSimulation(i);
 
 
@@ -124,15 +124,19 @@ public class Validator {
     private static void runTransactions(String threadName) {
 
         for (int i = 0; i < numberOfIterations; i++) {
+            if((i+1)%50==0){
+                System.out.println("Iter "+ i+" reached on " + Thread.currentThread().getName());
+            }
             // Randomly select a file to write to
-            String fileName = "file" + random.nextInt(numberOfFiles) + ".txt";
+            int file = ThreadLocalRandom.current().nextInt(0,numberOfFiles);
+            String fileName = "file" + file + ".txt";
             String content = threadName+" writes on iteration "+ i;
 
             // Notify ZFSMapper about the writing start
             TransactionInformation transactionInformation= ZFSMapper.notifyWrite(threadName, fileName);
 
             // Simulate writing time using Gaussian distribution
-            long writingTime = (long) Math.max(100, random.nextGaussian() * stVarWritingTime + meanWritingTime);
+            long writingTime = (long) Math.max(100, ThreadLocalRandom.current().nextGaussian() * stVarWritingTime + meanWritingTime);
             try {
                 Thread.sleep(writingTime);
             } catch (InterruptedException e) {
@@ -189,7 +193,7 @@ public class Validator {
 
 
     private static void writeToCSV() {
-        String fileName = "validatorResultsZFSSnapshots.csv";
+        String fileName = "validatorResultsZFSSnapshots_1.csv";
 
         try (FileWriter writer = new FileWriter(fileName)) {
             // Write header with iteration numbers
